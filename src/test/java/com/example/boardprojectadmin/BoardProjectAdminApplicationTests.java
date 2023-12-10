@@ -11,5 +11,4 @@ class BoardProjectAdminApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }
