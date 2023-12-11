@@ -48,7 +48,7 @@ class ArticleManagementServiceTest {
 
         @DisplayName("게시글 API를 호출하면, 게시글을 가져온다.")
         @Test
-        void given_when_then() {
+        void givenNothing_whenCallingArticleApi_thenReturnsArticleList() {
             // Given
 
             // When
@@ -112,7 +112,7 @@ class ArticleManagementServiceTest {
             Long articleId = 1L;
             ArticleDto expectedArticle = createArticleDto("게시판", "글");
             server
-                    .expect(requestTo(projectProperties.board().url() + "/api/articles" + articleId))
+                    .expect(requestTo(projectProperties.board().url() + "/api/articles/" + articleId))
                     .andRespond(withSuccess(
                             mapper.writeValueAsString(expectedArticle),
                             MediaType.APPLICATION_JSON
@@ -136,7 +136,7 @@ class ArticleManagementServiceTest {
             // Given
             Long articleId = 1L;
             server
-                    .expect(requestTo(projectProperties.board().url() + "/api/articles" + articleId))
+                    .expect(requestTo(projectProperties.board().url() + "/api/articles/" + articleId))
                     .andExpect(method(HttpMethod.DELETE))
                     .andRespond(withSuccess());
 

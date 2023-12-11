@@ -81,7 +81,7 @@ class ArticleManagementControllerTest {
 
         // When & Then
         mvc.perform(
-                post("/management/articles" + articleId)
+                post("/management/articles/" + articleId)
                         .with(csrf())
         )
                 .andExpect(status().is3xxRedirection())
