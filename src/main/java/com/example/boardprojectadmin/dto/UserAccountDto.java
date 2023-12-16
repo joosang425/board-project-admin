@@ -1,9 +1,7 @@
 package com.example.boardprojectadmin.dto;
 
-import com.example.boardprojectadmin.domain.constant.RoleType;
 
 import java.time.LocalDateTime;
-import java.util.Set;
 
 public record UserAccountDto(
         String userId,
