@@ -24,6 +24,8 @@ public record ArticleCommentClientResponse(
         );
     }
 
+    public List<ArticleCommentDto> articleComments() { return this.embedded.articleComments(); }
+
     public record Embedded(List<ArticleCommentDto> articleComments) {}
 
     public record Page(
